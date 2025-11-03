@@ -13,9 +13,11 @@ import java.util.List;
 
 public class AdaptadorAlbum extends RecyclerView.Adapter<AdaptadorAlbum.AlbumViewHolder>{
     private List<Album> listaAlbumes;
+    private final RecyclerAlbumesInterface recyclerAlbumesInterface;
 
-    public AdaptadorAlbum(List<Album> listaAlbumes){
+    public AdaptadorAlbum(List<Album> listaAlbumes, RecyclerAlbumesInterface recyclerAlbumesInterface){
         this.listaAlbumes = listaAlbumes;
+        this.recyclerAlbumesInterface = recyclerAlbumesInterface;
     }
 
     @NonNull
@@ -53,6 +55,28 @@ public class AdaptadorAlbum extends RecyclerView.Adapter<AdaptadorAlbum.AlbumVie
             imagen = itemView.findViewById(R.id.imagenAlbum);
             nombreAlbum = itemView.findViewById(R.id.nombreAlbum);
             nombreBanda = itemView.findViewById(R.id.nombreBanda);
+
+            itemView.setOnClickListener(view -> {
+                if(recyclerAlbumesInterface != null){
+                    int pos = getAbsoluteAdapterPosition();
+
+                    if(pos != RecyclerView.NO_POSITION){
+                        recyclerAlbumesInterface.onItemClick(pos);
+                    }
+                }
+            });
+
+            itemView.setOnLongClickListener(view -> {
+                if(recyclerAlbumesInterface != null){
+                    int pos = getAbsoluteAdapterPosition();
+
+                    if(pos != RecyclerView.NO_POSITION){
+                        recyclerAlbumesInterface.onItemLongClick(pos);
+                    }
+                }
+
+                return true;
+            });
         }
     }
 }
