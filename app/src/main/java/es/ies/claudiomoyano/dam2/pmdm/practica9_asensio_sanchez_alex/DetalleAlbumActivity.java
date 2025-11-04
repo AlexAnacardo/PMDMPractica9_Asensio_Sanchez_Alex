@@ -22,7 +22,7 @@ public class DetalleAlbumActivity extends AppCompatActivity {
         String nombreAlbum = intentPadre.getStringExtra("nombre");
         String nombreBanda = intentPadre.getStringExtra("banda");
         String discografica = intentPadre.getStringExtra("discografica");
-        String copias = intentPadre.getStringExtra("copias");
+        int copias = intentPadre.getIntExtra("copias", 0);
         String fechaLanzamiento = intentPadre.getStringExtra("fechaLanzamiento");
 
         ImageView imagen = findViewById(R.id.fotoAlbum);
@@ -32,6 +32,7 @@ public class DetalleAlbumActivity extends AppCompatActivity {
         TextView tvCopias = findViewById(R.id.tvCopias);
         TextView tvFechaLanzamiento = findViewById(R.id.tvFechalanzamiento);
 
+        imagen.setImageResource(idFoto);
         tvNombre.setText("Nombre album: "+nombreAlbum);
         tvBanda.setText("Nombre banda: "+nombreBanda);
         tvDiscografica.setText("Discográfica: "+discografica);

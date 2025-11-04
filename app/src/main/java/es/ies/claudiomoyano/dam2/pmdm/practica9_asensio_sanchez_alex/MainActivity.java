@@ -44,23 +44,23 @@ public class MainActivity extends AppCompatActivity implements RecyclerAlbumesIn
         listaAlbumes.add(new Album(R.drawable.somewhere_in_time, "Somewhere in time", "Iron Maiden", 3, "EMI / Capitol", LocalDate.parse("1986-09-29")));
         listaAlbumes.add(new Album(R.drawable.no_prayer_for_the_dying, "No prayer for the dying", "Iron Maiden", 1, "EMI / Epic", LocalDate.parse("1990-10-01")));
         listaAlbumes.add(new Album(R.drawable.killers, "Killers", "Iron Maiden", 1, "EMI / Capitol", LocalDate.parse("1981-02-02")));
-        listaAlbumes.add(new Album(R.drawable.brave_new_world, "Brave new world", "Iron Maiden", 0, "EMI / Sony", LocalDate.parse("2000-05-29")));
+        listaAlbumes.add(new Album(R.drawable.brave_new_world, "Brave new world", "Iron Maiden", 3, "EMI / Sony", LocalDate.parse("2000-05-29")));
 
-        listaAlbumes.add(new Album(R.drawable.painkiller, "Painkiller", "Judas Priest", 0, "Columbia", LocalDate.parse("1990-09-17")));
-        listaAlbumes.add(new Album(R.drawable.angel_of_retribution, "Angel of retribution", "Judas Priest", 0, "Columbia / Sony", LocalDate.parse("2005-03-01")));
-        listaAlbumes.add(new Album(R.drawable.screaming_for_vengeance, "Screaming for vengeance", "Judas Priest", 0, "Columbia", LocalDate.parse("1982-07-17")));
+        listaAlbumes.add(new Album(R.drawable.painkiller, "Painkiller", "Judas Priest", 2, "Columbia", LocalDate.parse("1990-09-17")));
+        listaAlbumes.add(new Album(R.drawable.angel_of_retribution, "Angel of retribution", "Judas Priest", 2, "Columbia / Sony", LocalDate.parse("2005-03-01")));
+        listaAlbumes.add(new Album(R.drawable.screaming_for_vengeance, "Screaming for vengeance", "Judas Priest", 2, "Columbia", LocalDate.parse("1982-07-17")));
 
         listaAlbumes.add(new Album(R.drawable.paranoid, "Paranoid", "Black Sabbath", 4, "Vertigo / Warner Bros.", LocalDate.parse("1970-09-18")));
 
         listaAlbumes.add(new Album(R.drawable.blizzard_of_ozz, "Blizzard of Ozz", "Ozzy Osbourne", 5, "Jet / Epic", LocalDate.parse("1980-09-20")));
-        listaAlbumes.add(new Album(R.drawable.black_rain, "Black rain", "Ozzy Osbourne", 0, "Epic / Sony", LocalDate.parse("2007-05-22")));
+        listaAlbumes.add(new Album(R.drawable.black_rain, "Black rain", "Ozzy Osbourne", 1, "Epic / Sony", LocalDate.parse("2007-05-22")));
         listaAlbumes.add(new Album(R.drawable.bark_at_the_moon, "Bark at the moon", "Ozzy Osbourne", 3, "Jet / Epic", LocalDate.parse("1983-11-15")));
 
         listaAlbumes.add(new Album(R.drawable.rust_in_peace, "Rust in peace", "Megadeth", 1, "Capitol", LocalDate.parse("1990-09-24")));
         listaAlbumes.add(new Album(R.drawable.peace_sells, "Peace sells... but who's buying?", "Megadeth", 1, "Capitol", LocalDate.parse("1986-09-19")));
         listaAlbumes.add(new Album(R.drawable.countdown_to_extinction, "Countdown to extinction", "Megadeth", 2, "Capitol", LocalDate.parse("1992-07-14")));
 
-        listaAlbumes.add(new Album(R.drawable.angel_of_salvation, "Angel of salvation", "Galneryus", 0, "VAP / Warner Music Japan", LocalDate.parse("2012-10-10")));
+        listaAlbumes.add(new Album(R.drawable.angel_of_salvation, "Angel of salvation", "Galneryus", 1, "VAP / Warner Music Japan", LocalDate.parse("2012-10-10")));
 
         listaAlbumes.add(new Album(R.drawable.metallica, "Metallica (The Black Album)", "Metallica", 17, "Elektra", LocalDate.parse("1991-08-12")));
         listaAlbumes.add(new Album(R.drawable.master_of_puppets, "Master of puppets", "Metallica", 8, "Elektra", LocalDate.parse("1986-03-03")));
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAlbumesIn
         intentDetalles.putExtra("banda", album.getBanda());
         intentDetalles.putExtra("copias", album.getCopiasVendidas());
         intentDetalles.putExtra("discografica", album.getDiscografica());
-        intentDetalles.putExtra("fechaLanzamiento", album.getFechaLanzamiento());
+        intentDetalles.putExtra("fechaLanzamiento", album.getFechaLanzamiento().toString());
 
         startActivity(intentDetalles);
     }
